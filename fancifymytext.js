@@ -1,21 +1,21 @@
-function myFunction() {
+function increaseFontSize() {
     document.getElementById("userInputTxt").style.fontSize = "24pt";
 }
 
-function myButton1() {
+function fancify() {
     document.getElementById("userInputTxt").style.fontWeight = "bold";
     document.getElementById("userInputTxt").style.color = 'blue';
     document.getElementById("userInputTxt").style.textDecoration = "underline";
 
 }
 
-function myButton2() {
+function borify() {
     document.getElementById("userInputTxt").style.fontWeight = "normal";
     document.getElementById("userInputTxt").style.color = "black";
     document.getElementById("userInputTxt").style.textDecoration = "none";
 }
 
-function myFunction2() {
+function interruptingCow() {
     var str = document.getElementById("userInputTxt");
     var parts = str.value.split(".");  
     str.value = parts.join("-Moo");
