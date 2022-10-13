@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+#myDIV {
+  height: 800px;
+  width: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#mybg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img_parallax.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.top-left {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  font-size: 28px;
+  font-family: fantasy;
+
+}
+.top-right1 {
+  position: absolute;
+  top: 64px;
+  right: 80px;
+  font-size: 28px;
+  font-family: fantasy;
+}
+.top-right2 {
+  position: absolute;
+  top: 64px;
+  right: 280px;
+  font-size: 28px;
+  font-family: fantasy;
+}
+
+.parallax {
+  /* Full height */
+    height: 100%;
+    width: 100%;
+
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a:link, a:visited {
+  color: black;
+}
+
+a:hover, a:active {
+  color: green;
+}
+
+img {
+  border-radius: 50%;
+}
+</style>
+
+<body>
+<div id="mybg" class="mybg">
+<div id="headerLeft" class="top-left">CS-196W</div>
+<div id="headerRight2" class="top-right2">
+  <a href="test.html">Assignment 2</a>
+</div>
+<div id="headerRight1" class="top-right1">
+  <a href="https://www.thesitewizard.com/">Assignment 4</a>
+</div>
+<div id="myDIV" onscroll="myFunction()">
+  <div id="parallax1" class="parallax"></div>
+  <div 
+    style="height:1000px;
+    width:80%;
+    margin: auto;
+    background-color:#b19cd9;
+    font-size:36px;
+    text-align:center">
+    <h2><br>Cotey Hinton</h2>
+    <p>Android Developer</p>
+    <img src="profile_pic.jpg" width="300" height="300" border-radius="50%"</img>
+
+    <div  style="height:200px; 
+      width: 500px;
+      font-size:36px;
+      margin: 0 auto;
+      text-align:center">
+      <br>Talented android developer passionately working to integrate modern API's and libraries with creative design to produce innovative and captivating applications.
+    </div>
+
+  </div>
+
+  <div id="parallax2" class="parallax"></div>
+</div>
+</div>
+
+<script>
+function myFunction() {
+  const element = document.getElementById("myDIV");
+  let y = element.scrollTop;
+  const bgElement = document.getElementById("mybg");
+  if(y < 1000){
+    bgElement.style.backgroundRepeat="no-repeat";
+    bgElement.style.backgroundImage="url('img_parallax.jpg')";    
+  } else {
+    bgElement.style.backgroundRepeat="no-repeat";
+    bgElement.style.backgroundImage="url('img_parallax2.jpg')";
+  }
+
+}
+</script>
+
+</body>
+</html>
