@@ -23,23 +23,33 @@
   // entire program in the init function, for similar reasons that
   // you shouldn't write an entire Java program in the main method).
   function shiftCipher(text){
-    text=text.toLowerCase();
-    let result="";
-    for(let i=0;i<text.length;i++){
+    // convert to lowercase and initialize result to empty string
+    text = text.toLowerCase();
+    let cipherResult = "";
+
+    // loop through input
+    for(let i = 0; i < text.length; i++){
+
+      // handle the different cases
+      // case 1: input is outside cipher range a-z -> no change
       if(text[i]<"a" || text[i]>"z"){
-        result+=text[i];
-      } else if(text[i]=="z"){
-        result+="a"
-      }else{
-        let textUnicode=text.charCodeAt(i);
-        let theNextChar=String.fromCharCode(textUnicode+1);
-        result+=theNextChar;
+        cipherResult += text[i];
+      } 
+      // case 2: end of cipher range -> create circular encryption connecting end back to beginning
+      else if(text[i]=="z"){
+        cipherResult += "a"
+      }
+      // case 3: beginning or middle of cipher range -> connect to next element in cypher
+      else{
+        let asciiCode = text.charCodeAt(i);
+        let nextChar = String.fromCharCode(asciiCode+1);
+        cipherResult += nextChar;
       }
     }
-    return result;
+    return cipherResult;
   }
   document.getElementById("encrypt-it").addEventListener("click",()=>{
     let text=document.getElementById("input-text").value;
-    document.getElementById("result").innerText=shiftCipher(text);
+    document.getElementById("cipherResult").innerText=shiftCipher(text);
   })
 })();
