@@ -61,6 +61,14 @@
   font-size: 28px;
   font-family: fantasy;
 }
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: black;
+}
 
 .parallax {
   /* Full height */
@@ -106,6 +114,15 @@ img {
   <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a6">Assignment 6</a>
 </div>
 <div id="myDIV" onscroll="myFunction()">
+  <div class="content">
+    <h2>Cotey's CSC 196W Navigation Page</h2>
+    <p>More assignments will be added to this website as I do them.</p>
+    <br>
+    <div id="counter"></div>
+    <script src="app.js"></script>
+    <p>This is a page counter which uses local storage! <br> 
+      It will keep track of how many times you have been on this page!</p>
+  </div>
   <div id="parallax1" class="parallax"></div>
   <div 
     style="height:1000px;
