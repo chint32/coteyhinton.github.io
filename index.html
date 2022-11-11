@@ -6,22 +6,12 @@
   height: 800px;
   width: 100%;
   overflow: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-repeat: no-repeat;
   background-size: cover;
 }
 
-#mybg {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.mybg {
   width: 100%;
   height: 100%;
-  background: url("img_parallax.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -63,25 +53,16 @@
 }
 .content {
   width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 10%;
+  transform: translateY(100%);
   text-align: center;
   color: black;
 }
 
 .parallax {
   /* Full height */
-    height: 100%;
-    width: 100%;
-
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 a:link, a:visited {
@@ -99,29 +80,14 @@ img {
 
 <body>
 <div id="mybg" class="mybg">
-<div id="headerLeft" class="top-left">CS-196W</div>
+<script src="bg.js"></script>
 
-<div id="headerRight4" class="top-right4">
-  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a2">Assignment 2</a>
-</div>
-<div id="headerRight3" class="top-right3">
-  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a4">Assignment 4</a>
-</div>
-<div id="headerRight2" class="top-right2">
-  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a5">Assignment 5</a>
-</div>
-<div id="headerRight1" class="top-right1">
-  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a6">Assignment 6</a>
-</div>
 <div id="myDIV" onscroll="myFunction()">
-  <div class="content">
-    <h2>Cotey's CSC 196W Navigation Page</h2>
-    <p>More assignments will be added to this website as I do them.</p>
+    <div class="content">
+    <h2>Using counter in local storage to change message background color</h2>
     <br>
-    <div id="counter"></div>
+    <div id="numVisits"></div>
     <script src="app.js"></script>
-    <p>This is a page counter which uses local storage! <br> 
-      It will keep track of how many times you have been on this page!</p>
   </div>
   <div id="parallax1" class="parallax"></div>
   <div 
@@ -146,24 +112,50 @@ img {
   </div>
 
   <div id="parallax2" class="parallax"></div>
-</div>
-</div>
 
-<script>
-function myFunction() {
-  const element = document.getElementById("myDIV");
-  let y = element.scrollTop;
-  const bgElement = document.getElementById("mybg");
-  if(y < 1000){
-    bgElement.style.backgroundRepeat="no-repeat";
-    bgElement.style.backgroundImage="url('img_parallax.jpg')";    
-  } else {
-    bgElement.style.backgroundRepeat="no-repeat";
-    bgElement.style.backgroundImage="url('img_parallax2.jpg')";
-  }
+  </div>
+  <div id="headerLeft" class="top-left">CS-196W</div>
 
-}
-</script>
+    <div id="headerRight4" class="top-right4">
+      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a2">Assignment 2</a>
+    </div>
+    <div id="headerRight3" class="top-right3">
+      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a4">Assignment 4</a>
+    </div>
+    <div id="headerRight2" class="top-right2">
+      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a5">Assignment 5</a>
+    </div>
+    <div id="headerRight1" class="top-right1">
+      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a6">Assignment 6</a>
+    </div>
 
-</body>
+  </div>
+
+
+  <script>
+  function myFunction() {
+    const element = document.getElementById("myDIV");
+    let y = element.scrollTop;
+    const bgElement = document.getElementById("mybg");
+    if(y < 1000){
+      if(localStorage.count % 2 == 0){
+        bgElement.style.backgroundRepeat="no-repeat";
+        bgElement.style.backgroundImage="url('img_parallax.jpg')";    
+      } else {
+        bgElement.style.backgroundRepeat="no-repeat";
+        bgElement.style.backgroundImage="url('img_parallax_green.png')";    
+      }
+        } else {
+          if(localStorage.count % 2 == 0){
+            bgElement.style.backgroundRepeat="no-repeat";
+            bgElement.style.backgroundImage="url('img_parallax2.jpg')";    
+          } else {
+            bgElement.style.backgroundRepeat="no-repeat";
+            bgElement.style.backgroundImage="url('img_parallax2_green.png')";    
+          }  
+        }
+      }
+    </script>
+
+  </body>
 </html>
