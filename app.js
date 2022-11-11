@@ -1,11 +1,12 @@
-pageCounter(); // calling the function
+countVisit(); // calling the function
 
-function pageCounter() {
-    if(!localStorage.count) { 
-        localStorage.count = 1; // if it's the first time the user is accessing the page, we set the counter to 1 
+function countVisit() {
+    if(Number(localStorage.count) % 2 == 0){
+	  document.getElementById("numVisits").style.color = 'blue';
+        document.getElementById("numVisits").innerHTML = "Right now the message background is blue<br>Next time it will be green";
+    } else {
+	  document.getElementById("numVisits").style.color = 'green';
+        document.getElementById("numVisits").innerHTML = "Right now the message background is green<br>Next time it will be blue";
     }
-    else {
-        localStorage.count = Number(localStorage.count) + 1; // if it's not the first time, we just add the counter by 1   
-    }
-    document.getElementById("counter").innerHTML = "You have visited this page " + localStorage.count + " time(s)!";
 }
+
