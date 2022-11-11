@@ -83,6 +83,21 @@ img {
 <script src="bg.js"></script>
 
 <div id="myDIV" onscroll="myFunction()">
+<div id="headerLeft" class="top-left">CS-196W</div>
+
+<div id="headerRight4" class="top-right4">
+  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a2">Assignment 2</a>
+</div>
+<div id="headerRight3" class="top-right3">
+  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a4">Assignment 4</a>
+</div>
+<div id="headerRight2" class="top-right2">
+  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a5">Assignment 5</a>
+</div>
+<div id="headerRight1" class="top-right1">
+  <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a6">Assignment 6</a>
+</div>
+
     <div class="content">
     <h2>Using counter in local storage to change message background color</h2>
     <br>
@@ -113,49 +128,36 @@ img {
 
   <div id="parallax2" class="parallax"></div>
 
-  </div>
-  <div id="headerLeft" class="top-left">CS-196W</div>
-
-    <div id="headerRight4" class="top-right4">
-      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a2">Assignment 2</a>
-    </div>
-    <div id="headerRight3" class="top-right3">
-      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a4">Assignment 4</a>
-    </div>
-    <div id="headerRight2" class="top-right2">
-      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a5">Assignment 5</a>
-    </div>
-    <div id="headerRight1" class="top-right1">
-      <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a6">Assignment 6</a>
-    </div>
-
-  </div>
+</div>
 
 
-  <script>
-  function myFunction() {
-    const element = document.getElementById("myDIV");
-    let y = element.scrollTop;
-    const bgElement = document.getElementById("mybg");
-    if(y < 1000){
-      if(localStorage.count % 2 == 0){
-        bgElement.style.backgroundRepeat="no-repeat";
-        bgElement.style.backgroundImage="url('img_parallax.jpg')";    
-      } else {
-        bgElement.style.backgroundRepeat="no-repeat";
-        bgElement.style.backgroundImage="url('img_parallax_green.png')";    
-      }
-        } else {
-          if(localStorage.count % 2 == 0){
-            bgElement.style.backgroundRepeat="no-repeat";
-            bgElement.style.backgroundImage="url('img_parallax2.jpg')";    
-          } else {
-            bgElement.style.backgroundRepeat="no-repeat";
-            bgElement.style.backgroundImage="url('img_parallax2_green.png')";    
-          }  
-        }
-      }
-    </script>
+</div>
 
-  </body>
+
+<script>
+function myFunction() {
+  const element = document.getElementById("myDIV");
+  let y = element.scrollTop;
+  const bgElement = document.getElementById("mybg");
+  if(y < 1000){
+    if(localStorage.count % 2 == 0){
+      bgElement.style.backgroundRepeat="no-repeat";
+      bgElement.style.backgroundImage="url('img_parallax.jpg')";    
+    } else {
+      bgElement.style.backgroundRepeat="no-repeat";
+      bgElement.style.backgroundImage="url('img_parallax_green.png')";    
+    }
+  } else {
+    if(localStorage.count % 2 == 0){
+      bgElement.style.backgroundRepeat="no-repeat";
+      bgElement.style.backgroundImage="url('img_parallax2.jpg')";    
+    } else {
+      bgElement.style.backgroundRepeat="no-repeat";
+      bgElement.style.backgroundImage="url('img_parallax2_green.png')";    
+    }  
+  }
+}
+</script>
+
+</body>
 </html>
