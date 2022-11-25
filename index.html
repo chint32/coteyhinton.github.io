@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="mybg" class="mybg">
+      <script src="set_bg.js"></script>
+
+      <div id="myDIV" onscroll="changeBGmodLocalCtr()">
+        <div id="headerLeft" class="top-left">CS-196W</div>
+        <div id="headerRight4" class="top-right4">
+          <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a2">Assignment 2</a>
+        </div>
+        <div id="headerRight3" class="top-right3">
+          <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a4">Assignment 4</a>
+        </div>
+        <div id="headerRight2" class="top-right2">
+          <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a5">Assignment 5</a>
+        </div>
+        <div id="headerRight1" class="top-right1">
+          <a href="https://chint32.github.io/coteyhinton.github.io/cotey_a6">Assignment 6</a>
+        </div>
+
+        <div class="content">
+          <h2>Modding counter in local storage to create alternating message background color</h2>
+          <br>
+          <div id="numVisits"></div>
+          <script src="app.js"></script>
+        </div>
+        <div id="parallax1" class="parallax"></div>
+        <div 
+          style="height:1000px;
+          width:80%;
+          margin: auto;
+          background-color:#b19cd9;
+          font-size:36px;
+          text-align:center">
+           <h2><br>Cotey Hinton</h2>
+           <p>Android Developer</p>
+           <img src="profile_pic.jpg" width="300" height="300" border-radius="50%"</img>
+
+           <div  style="height:200px; 
+             width: 500px;
+             font-size:36px;
+             margin: 0 auto;
+             text-align:center">
+               <br>Talented android developer passionately working to integrate modern API's and libraries with creative design to produce innovative and captivating applications.
+           </div>
+        </div>
+
+        <div id="parallax2" class="parallax"></div>
+     </div>
+  </div>
+  <script>
+    function changeBGmodLocalCtr() {
+      const element = document.getElementById("myDIV");
+      let y = element.scrollTop;
+      const bgElement = document.getElementById("mybg");
+      if(y < 1000){
+        if(localStorage.count % 2 == 0){
+          bgElement.style.backgroundRepeat="no-repeat";
+          bgElement.style.backgroundImage="url('img_parallax.jpg')";    
+        } else {
+          bgElement.style.backgroundRepeat="no-repeat";
+          bgElement.style.backgroundImage="url('img_parallax_green.png')";    
+        }
+      } else {
+        if(localStorage.count % 2 == 0){
+          bgElement.style.backgroundRepeat="no-repeat";
+          bgElement.style.backgroundImage="url('img_parallax2.jpg')";    
+      } else {
+        bgElement.style.backgroundRepeat="no-repeat";
+        bgElement.style.backgroundImage="url('img_parallax2_green.png')";    
+      }  
+    }
+  }
+  </script>
+  </body>
+</html>
